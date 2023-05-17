@@ -12,21 +12,21 @@ import db from "./config/Database.js";
 dotenv.config();
 const app = express();
 
-// const sessionStrore = sequelizeStore(session.Store);
-// const store = new sessionStrore({
-//   db: db,
-// });
+const sessionStrore = sequelizeStore(session.Store);
+const store = new sessionStrore({
+  db: db,
+});
 
-(async () => {
-  await db.sync();
-})();
+// (async () => {
+//   await db.sync();
+// })();
 
 app.use(
   session({
     secret: process.env.SESS_SECRET,
     resave: false,
     saveUninitialized: true,
-    // store: store,
+    store: store,
     cookie: {
       secure: "auto",
     },
@@ -34,7 +34,7 @@ app.use(
 );
 
 app.use(express.json());
-// app.use(cookieParser());
+app.use(cookieParser());
 app.use(cors({ credentials: true }));
 app.use(usersRoute);
 app.use(bookRoute);
