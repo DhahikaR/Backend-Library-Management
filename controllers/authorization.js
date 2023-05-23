@@ -9,11 +9,11 @@ export const Login = async (req, res) => {
   });
   if (!user) return res.status(404).json({ msg: "user not found" });
   const match = await bcrypt.compare(req.body.password, user.password);
-  if (!match) return res.status(500).json({ msg: "wrong password" });
+  if (!match) return res.status(400).json({ msg: "wrong password" });
   req.session.userId = user.id;
   const id = user.id;
-  const name = user.name;
-  const email = user.name;
+  const name = user.nama;
+  const email = user.email;
   res.status(200).json({ id, name, email });
 };
 
