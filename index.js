@@ -17,9 +17,9 @@ const store = new sessionStrore({
   db: db,
 });
 
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  await db.sync();
+})();
 
 app.use(
   session({
