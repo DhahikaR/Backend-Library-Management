@@ -9,7 +9,7 @@ export const Login = async (req, res) => {
   });
   if (!user) return res.status(404).json({ msg: "user not found" });
   const match = await bcrypt.compare(req.body.password, user.password);
-  if (!match) return res.status(400).json({ msg: "wrong password" });
+  if (!match) return res.status(401).json({ msg: "wrong password" });
   req.session.userId = user.id;
   const id = user.id;
   const name = user.nama;
@@ -33,7 +33,7 @@ export const Me = async (req, res) => {
 
 export const Logout = async (req, res) => {
   req.session.destroy((err) => {
-    if (err) return res.status(400).json({ msg: "Can't Logout" });
+    if (err) return res.status(401).json({ msg: "Can't Logout" });
     req.status(200).json({ msg: "Logout Successfull!!" });
   });
 };
