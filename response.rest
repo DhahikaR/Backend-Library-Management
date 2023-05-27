@@ -3,17 +3,17 @@ GET http://localhost:5000/users
 
 ###
 // Get User
-GET http://localhost:5000/users/
+GET http://localhost:5000/users/2
 
 ###
 // Update User
-PATCH http://localhost:5000/users/
+PATCH http://localhost:5000/users/1
 Content-Type: application/json
 
 {
     "nip": "123456789",
-    "name": "Dhahika",
-    "email": "dhahika@gamil.com"
+    "name": "Anton nwe",
+    "email": "Anton@gamil.com"
 }
 
 ###
@@ -40,7 +40,7 @@ Content-Type: application/json
 
 {
     "email": "dhahika@gamil.com",
-    "password": "123456",
+    "password": "123456"
 }
 
 ### 
@@ -66,8 +66,8 @@ Content-Type: application/json
 
 {
     "judul": "Laskar Pelangi",
-    "penagarang": " Andrea Hirata",
-    "penerbit":"Bentang Pustaka",
+    "pengarang": " Andrea Hirata",
+    "Penerbit":"Bentang Pustaka",
     "tahun_terbit":"2005",
     "halaman":"XXXIV, 529 halaman",
     "isbn":"979-3062-79-7"
