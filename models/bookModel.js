@@ -21,7 +21,7 @@ const Book = db.define(
         notEmpty: true,
       },
     },
-    Penerbit: {
+    penerbit: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
