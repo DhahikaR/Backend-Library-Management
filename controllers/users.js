@@ -8,7 +8,7 @@ export const getUsers = async (req, res) => {
     });
     res.json(users);
   } catch (error) {
-    res.status(500).json({ masg: error.msg });
+    res.status(500).json({ msg: error.msg });
   }
 };
 
@@ -49,7 +49,7 @@ export const updateUser = async (req, res) => {
     );
     res.status(200).json({ msg: "Updated!!" });
   } catch (error) {
-    res.status(500).json({ masg: error.msg });
+    res.status(500).json({ msg: error.msg });
   }
 };
 
@@ -66,7 +66,7 @@ export const Register = async (req, res) => {
       email: email,
       password: hashPassword,
     });
-    res.status(200).json({ msg: "Register Successfull!!!" });
+    res.status(200).json({ msg: "Register Successful!!!" });
   } catch (error) {
     res.status(500).json({ msg: error.msg });
   }
