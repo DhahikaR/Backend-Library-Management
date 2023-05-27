@@ -19,7 +19,7 @@ export const Login = async (req, res) => {
 
 export const Me = async (req, res) => {
   if (!req.session.userId) {
-    return res.status(401).json({ msg: "Anda Belum Login" });
+    return res.status(401).json({ msg: "You are haven't Login" });
   }
   const user = await Users.findOne({
     attributes: ["userId", "name", "email"],
@@ -34,6 +34,6 @@ export const Me = async (req, res) => {
 export const Logout = async (req, res) => {
   req.session.destroy((err) => {
     if (err) return res.status(401).json({ msg: "Can't Logout" });
-    req.status(200).json({ msg: "Logout Successfull!!" });
+    req.status(200).json({ msg: "Logout Successful!!" });
   });
 };
