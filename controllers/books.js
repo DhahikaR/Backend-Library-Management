@@ -80,6 +80,7 @@ export const addBook = async (req, res) => {
       tahun_terbit: tahun_terbit,
       halaman: halaman,
       isbn: isbn,
+      userId: req.userId,
     });
     res.status(200).json({ msg: "Input Data Successfull!!" });
   } catch (error) {
