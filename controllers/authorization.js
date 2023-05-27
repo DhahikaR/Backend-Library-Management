@@ -22,7 +22,7 @@ export const Me = async (req, res) => {
     return res.status(401).json({ msg: "You are haven't Login" });
   }
   const user = await Users.findOne({
-    attributes: ["userId", "name", "email"],
+    attributes: ["id", "name", "email"],
     where: {
       id: req.session.userId,
     },
