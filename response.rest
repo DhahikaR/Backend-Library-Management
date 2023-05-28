@@ -67,7 +67,7 @@ Content-Type: application/json
 {
     "judul": "Laskar Pelangi",
     "pengarang": " Andrea Hirata",
-    "Penerbit":"Bentang Pustaka",
+    "penerbit":"Bentang Pustaka",
     "tahun_terbit":"2005",
     "halaman":"XXXIV, 529 halaman",
     "isbn":"979-3062-79-7"
@@ -75,12 +75,12 @@ Content-Type: application/json
 
 ###
 // Edit Data Book
-PATCH http://localhost:5000/books/
+PATCH http://localhost:5000/books/1
 Content-Type: application/json
 
 {
-    "judul": "Laskar Pelangi",
-    "penagarang": " Andrea Hirata",
+    "judul": "Laskar Pelangi 2",
+    "penagarang": "Andrea Hirata",
     "penerbit":"Bentang Pustaka",
     "tahun_terbit":"2005",
     "halaman":"XXXIV, 529 halaman",
