@@ -8,12 +8,13 @@ import {
   deleteBook,
 } from "../controllers/books.js";
 
+import { userVerify } from "../middleware/userVerify.js";
+
 const router = express.Router();
 
 router.get("/books", getBooks);
 router.get("/books/:id", getBooksById);
 router.patch("/books/:id", editBook);
 router.post("/books", addBook);
-router.delete("/books/:id", deleteBook);
 
 export default router;
