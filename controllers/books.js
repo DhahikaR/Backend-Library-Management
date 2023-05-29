@@ -31,7 +31,7 @@ export const getBooksById = async (req, res) => {
         "isbn",
       ],
       where: {
-        id: book.id,
+        id: req.params.id,
       },
     });
     res.status(200).json(book);
@@ -106,5 +106,3 @@ export const deleteBook = async (req, res) => {
     res.status(500).json({ msg: error.msg });
   }
 };
-
-export const checkBook = async (req, res) => {};
