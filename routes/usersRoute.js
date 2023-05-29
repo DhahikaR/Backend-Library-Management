@@ -8,12 +8,14 @@ import {
   Register,
 } from "../controllers/users.js";
 
+import { userVerify } from "../middleware/userVerify.js";
+
 const router = express.Router();
 
-router.get("/users", getUsers);
-router.get("/users/:id", getUserById);
-router.patch("/users/:id", updateUser);
+router.get("/users", userVerify, getUsers);
+router.get("/users/:id", userVerify, getUserById);
+router.patch("/users/:id", userVerify, updateUser);
 router.post("/users", Register);
-router.delete("/users/:id", deleteUser);
+router.delete("/users/:id", userVerify, deleteUser);
 
 export default router;
