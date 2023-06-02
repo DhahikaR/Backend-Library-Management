@@ -36,9 +36,9 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
-app.use("/usersRoute", usersRoute);
-app.use("/bookRoute", bookRoute);
-app.use("/authRoute", authRoute);
+app.use(usersRoute);
+app.use(bookRoute);
+app.use(authRoute);
 
 // store.sync();
 
